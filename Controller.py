@@ -1,4 +1,5 @@
-from maspy import * 
+from maspy import *
+from maspy.learning import *
 import random
 import threading 
 import time 
@@ -39,7 +40,8 @@ class Controller(Agent):
     def find_way(self, src): 
         self.print("Adicionando politica")
         cartesian_size = 4
-        self.model.set_state(self.taxi.start)
+        # self.city.possible_starts = {'location': [self.taxi.start]}
+        self.set_start(self.taxi.start)
         self.taxi.add_policy(self.model)
         sleep(5)
         reward = self.check_reached()

@@ -96,4 +96,9 @@ class City(Environment):
         reward = reward_percept.args
         self.change(reward_percept, 0)
         return reward 
+
+    def set_start(self, src, start):
+        location = self.get(Percept('location', (Any, Any)))
+
+        self.change(location, start)
         

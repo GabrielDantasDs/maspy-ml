@@ -17,15 +17,14 @@ def instance(cartesian_size):
     taxi_3 = AgentTaxi("Taxi", cartesian_size)
     taxi_4 = AgentTaxi("Taxi", cartesian_size)
     taxi_5 = AgentTaxi("Taxi", cartesian_size)
-    possible_starts = {'location': [(0,1)]}
+    possible_starts = {'location': [(taxi.start), (taxi_2.start), (taxi_3.start), (taxi_4.start), (taxi_5.start )]}
     client = AgentClient("Client", cartesian_size)
     city = City("Cidade", {"target": client.target, "cartesian_size": cartesian_size, "possible_starts": possible_starts})
     model = EnvModel(city)
     model.learn(qlearning)
     controller = Controller("Controller", [taxi, taxi_2, taxi_3, taxi_4, taxi_5], model, client)
-    Admin().connect_to([controller, taxi, taxi_2, taxi_3, taxi_4, client], city)
-
     client.add(Goal("request_taxi"))
+    Admin().connect_to([controller, taxi, taxi_2, taxi_3, taxi_4, client], city)
 
     Admin().start_system()
     # Admin().stop_system()
