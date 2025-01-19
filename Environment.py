@@ -12,7 +12,7 @@ class City(Environment):
         self.max_col = args['cartesian_size'] - 1
         self.bad_ways = self.setBadWays(self.max_col+1)
         self.create(Percept("location", (self.max_row+1,self.max_col+1), cartesian))
-        self.possible_starts = args.possible_starts
+        self.possible_starts = args['possible_starts']
 
         self.create(Percept('reward', 0))
         print(f"Initial percept created: {self.get(Percept('location', (Any,Any)))}")
