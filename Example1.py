@@ -30,7 +30,7 @@ def instance(cartesian_size):
     # Admin().stop_system()
 
 if __name__ == "__main__":
-    cartesian_size = 4
+    cartesian_size = 6
     instance(cartesian_size)
 
 
