@@ -10,7 +10,7 @@ class AgentTaxi(Agent):
         self.add(Belief("available"))
         self.value = random.randrange(0, 10)
         self.start = (random.randrange(0, cartesian_size - 1), random.randrange(0, cartesian_size - 1))
-        self.max_distance = random.randrange(0, 5)
+        self.max_distance = random.randrange(0, cartesian_size)
     
     def agent_name(self):
         return self.my_name

@@ -1,0 +1,12 @@
+Tamanho do plano,Agente,recompensa,distância percorrida,Alcançou,Média recompensa
+9,Taxi_3,5,1,Sim,5
+16,Taxi_2,5,1,Sim,5
+25,Taxi_2,5,1,Sim,5
+36,Taxi_5,-6,5,Não,"-1,2"
+49,Taxi_2,-2,6,Sim,"-0,333333333333333"
+81,Taxi_5,2,4,Sim,"0,5"
+64,Taxi_3,-8,6,Não,"-1,33333333333333"
+100,Taxi_5,4,2,Sim,2
+121,Taxi_4,-4,4,Não,-1
+121,Taxi_2,2,4,Sim,"0,5"
+144,Taxi_2,3,3,Sim,1

@@ -9,7 +9,16 @@ from AgentTaxi import AgentTaxi
 from AgentClient import AgentClient
 from Controller import Controller
 from Environment import City
+import re
       
+# check function
+def check_integer(s):
+    if not isinstance(s, str):  # Garante que a entrada seja uma string
+        return False
+    s = s.strip()  # Remove espaços extras
+    if s.isdigit() or (s.startswith('-') and s[1:].isdigit()):  
+        return True
+    return False
       
 def instance(cartesian_size):
     taxi = AgentTaxi("Taxi", cartesian_size)
@@ -27,10 +36,12 @@ def instance(cartesian_size):
     Admin().connect_to([controller, taxi, taxi_2, taxi_3, taxi_4, client], city)
 
     Admin().start_system()
+    Admin().full_report = True
     # Admin().stop_system()
 
 if __name__ == "__main__":
-    cartesian_size = 6
+    entrada = int(input("Digite o tamanho da matriz quadrada desejada, ex: 5 para uma matriz 5x5 : "))
+    cartesian_size = entrada
     instance(cartesian_size)
 
 

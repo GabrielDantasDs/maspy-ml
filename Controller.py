@@ -43,8 +43,9 @@ class Controller(Agent):
         # self.city.possible_starts = {'location': [self.taxi.start]}
         self.set_start(self.taxi.start)
         self.taxi.add_policy(self.model)
-        sleep(5)
-        reward = self.check_reached()
+        self.taxi.auto_action = True
+        sleep(10)
+        reward = self.check_reached(self.taxi.my_name)
         self.print(f'Distância: {reward}')
         if (reward > self.taxi.max_distance):
             self.taxi._strategies.pop()

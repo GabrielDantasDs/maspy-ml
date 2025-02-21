@@ -13,3 +13,8 @@ class AgentClient(Agent):
     def solicitar_taxi(self, src):
         self.print(Template('Cliente na posição ${nome}').substitute(nome=self.target))
         self.send("Controller", tell, Belief("client_request_taxi"))
+        
+    @pl(gain, Goal("no_taxi"))
+    def give_up(self, src):
+        self.print(Template('Sem táxis disponíveis, cliente desistiu da viagem.'))
+        Admin().stop_all_agents()
